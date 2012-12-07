@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<head>
+<meta charset='utf-8' />
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+<title>Blitz - Settings</title>
+<meta content='width=device-width, initial-scale=1.0' name='viewport' />
+<meta content='Blitz makes load and performance testing of your web site, API, iPhone and Android and Facebook apps a fun sport. Instantly launch 1,000,000 users from around the world against your site to see if it can hold up. Integrate blitz into your continuous deployment with our Ruby Gem. Can you take the hits?' name='description' />
+<link href='../public/css/base.css' rel='stylesheet' />
+<link href='../public//css/settings.css' rel='stylesheet' />
+<link href='../public/css/iphone-style-checkbox.css' rel='stylesheet' />
+<script src='../public/js/libs/jquery-1.4.4.min.js'></script>
+<script src='../public/js/libs/iphone-style-checkboxes.js'></script>
+<script src='../public/js/views/settings.js'></script>
+<script src='../public/js/views/settings_rodrigo.js'></script>
+<style type="text/css">
+.form {
+	display:none;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+  
+  <header class='main'>
+    <p class='site-name'><a href='http://localhost:5000/'>Blitz</a></p>
+    <div class='credit_display'>
+      <div> YOU HAVE </div>
+      <div> <span class='current_balance'> 64 </span> <span class='credit_text'> Credits </span> </div>
+    </div>
+    <nav>
+      <ul>
+        <li class='/dashboard'><a href='http://localhost:5000/dashboard'>Dashboard</a></li>
+        <li class='/play'><a href='http://localhost:5000/play'>Play</a></li>
+        <li class='/test_results'><a href='http://localhost:5000/test_results'>Results</a></li>
+        <li class='/pricing'><a href='http://localhost:5200/pricing'>Pricing</a></li>
+        <li class='/docs'><a href='http://localhost:5000/docs'>Docs</a></li>
+        <li class='/support'><a href='http://localhost:5000/support'>Support</a></li>
+        <li class='logged-in'> <span class='google'>Rodrigo <span class='arrow'>&#9660;</span>
+          <ul class='dropdown' id='memberDropdown'>
+            <li class='in-dropdown'> <a href='http://localhost:5200/settings'>Settings</a> </li>
+            <li class='in-dropdown'> <a href='http://localhost:5200/logout'>Sign Out</a> </li>
+          </ul>
+          </span></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section class='top' id='account_name'>
+    <h3><span class='google icon'> Rodrigo
+      Graf </span></h3>
+  </section>
+  
+  <section class='settings' id='settings'>
+		<div class='settings-email right'>rodrigoagraf@gmail.com</div>
+		<div id='settings_tabs'>
+			<ul class='tab'>
+				<li class='active'><a class='tab' href='#account'>Account</a></li>
+				<li><a class='tab' href='#authorization'>Authorization</a></li>
+				<li><a class='tab' href='#plugins'>Plugins</a></li>
+				<li><a class='tab' href='#invites'>Invites</a></li>
+				<li><a class='tab' href='#api'>API Key</a></li>
+				<li><a class='tab' href='#billing'>Billing</a></li>
+			</ul>
+		</div>
+		<div class='box'>
+			<div class='tabbed' id='account'>
+				<ul class='sub-tab'>
+					<li class='active'> <a href='#account_summary'>Summary</a> </li>
+					<li> <a href='#account_notifications'>Notifications</a> </li>
+					<li> <a href='#account_user'>User Details</a> </li>
+				</ul>
+				<div class='content sub-tabbed' id='account_summary'>
+					<p> Hi <span class='keyword'>Rodrigo,</span> you created your <span class='keyword'>Blitz</span> account <span class='orange'>3 months ago</span> ( on <strong class='white'>August 03, 2012 07:29 PM</strong> ) <br />
+						This is the summary of your account so far. Congrats! </p>
+					<ul class='account-stats'>
+						<li> <span class='white'>91,101</span> hits </li>
+						<li> <span class='white'>39</span> sprints </li>
+						<li> <span class='white'>55</span> rushes </li>
+					</ul>
+				</div>
+				<div class='content sub-tabbed hidden' id='account_notifications'>
+					<p> We do our best to <span class='green'>not</span> spam you with emails. But every now and then we would <span class='keyword'>love</span> to tell you about all the cool things we are doing at&nbsp;<span class='keyword'>Blitz</span>. </p>
+					<ul class='alerts'>
+						<li>
+							<input checked='checked' class='checkbox' id='alerts' type='checkbox' />
+							Receive <span class='white'>blitz.io</span> alerts <span class='message ok'>changes saved</span> </li>
+						<li>
+							<input checked='checked' class='checkbox' id='newsletters' type='checkbox' />
+							Receive <span class='white'>blitz.io</span> newsletter <span class='message error'>an error occurred</span> </li>
+					</ul>
+				</div>
+				<div class='content sub-tabbed hidden' id='account_user'>
+					<h5> Name, Login Account and Password </h5>
+					<div class='form-box' id='name'>
+						<div class='label name'>Rodrigo Graf</div>
+						<a class='action'>Edit name</a>
+						<div class='form'>
+							<form action='#' method='post'>
+								<label>First Name</label>
+								<input type='text' value='Rodrigo' />
+								<label>Last Name</label>
+								<input type='text' value='Graf' />
+								<div class='form-actions'> <span class='message ok'>Name changed</span>
+									<div class='buttons'>
+										<div class='button'>
+											<input type='submit' value='Change' />
+										</div>
+										<a class='cancel'>Cancel</a> </div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class='form-box' id='email'>
+						<div class='label email'>rodrigo.graf@spirent.com</div>
+						<div class='button cancel'> <a>Cancel</a> </div>
+						<a class='action'>Change login account</a>
+						<div class='form'>
+							<form action='#' method='post'>
+								<label>New Email</label>
+								<input type='text' value='' />
+								<label>Repeat Email</label>
+								<input type='text' value='' />
+								<div class='form-actions'> <span class='message ok'>We sent a confirmation link to your email. Please click to confirm.</span>
+									<div class='buttons'>
+										<div class='button'>
+											<input type='submit' value='Change' />
+										</div>
+										<a class='cancel'>Cancel</a> </div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class='form-box' id='password'>
+						<div class='label password'>Password</div>
+						<a class='action'>Change password</a>
+						<div class='form'>
+							<form action='#' method='post'>
+								<label>Current Password</label>
+								<input type='password' value='' />
+								<span class='status loading'>&nbsp;</span>
+								<label>New Password</label>
+								<input type='password' value='' />
+								<label>Confirm Password</label>
+								<input type='password' value='' />
+								<div class='form-actions'> <span class='message ok'>We sent a confirmation link to your email. Please click to confirm.</span>
+									<div class='buttons'>
+										<div class='button'>
+											<input type='submit' value='Change' />
+										</div>
+										<a class='cancel'>Cancel</a> </div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='tabbed hidden' id='authorization'>
+				<div class='content'>
+					<p>You don't have any apps authorized yet.</p>
+					<p> <a class='go' href='/docs/rushing/authorization'>Learn how to authorize</a> </p>
+					<table>
+						<tr>
+							<th>URL</th>
+							<th>Last verified at</th>
+							<th></th>
+						</tr>
+						<tr>
+							<td><a href='#'>http://www.blitz.io:80</a> </td>
+							<td>2 months ago (on August 16, 2012)</td>
+							<td class='action'><div class='button'> <a>Delete</a> </div></td>
+						</tr>
+						<tr>
+							<td><a href='#'>http://www.mysite.com:80</a> </td>
+							<td>3 months ago (on July 31, 2012)</td>
+							<td class='action'><div class='button'> <a>Delete</a> </div></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class='tabbed hidden' id='plugins'>
+				<ul class='sub-tab'>
+					<li class='active'> <a href='#plugins_analytics'>Analytics</a> </li>
+					<li> <a href='#plugins_alerts'>Alerts</a> </li>
+				</ul>
+				<div class='content sub-tabbed' id='plugins_analytics'>
+					<h5> Add a Service </h5>
+					<p> Activate a service with your account settings and that service option will show in <span class='keyword'>Blitz</span> charts. These plugins, along with the metrics shown by <span class='keyword'>Blitz</span> give you the complete view into your application performance. Note that only one of your configured analytics should be enabled for charting. </p>
+					<div class='form-box activated' id='newrelic'>
+						<div class='label newrelic'>New Relic</div>
+						<input checked='checked' class='checkbox' id='alerts' type='checkbox' />
+						<a class='action'>Edit</a>
+						<div class='form'>
+							<form action='#' method='post'>
+								<label> Account ID <span> (Don't have an account? <a>Sign up here</a> for New Relic Standard) </span> </label>
+								<input type='text' value='' />
+								<span class='status loading'>&nbsp;</span>
+								<label> API Key <span> (To get a key,&nbsp;<a>sign in to New Relic</a>) </span> </label>
+								<input type='text' value='' />
+								<span class='status loading'>&nbsp;</span>
+								<div class='form-actions'> <span class='message ok'>New Relic service activated</span>
+									<div class='buttons'>
+										<div class='button disabled'>
+											<input disabled='disabled' type='submit' value='Activate' />
+										</div>
+										<a class='cancel'>Cancel</a> </div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class='form-box' id='scout'>
+						<div class='label scout'>Scout</div>
+						<a class='action'>Setup</a>
+						<div class='form'>
+							<form action='#' method='post'>
+								<label> Account ID <span> (To open an account,&nbsp;<a>register at Scout</a>) </span> </label>
+								<input type='text' value='' />
+								<span class='status loading'>&nbsp;</span>
+								<label>User Email</label>
+								<input type='text' value='' />
+								<span class='status loading'>&nbsp;</span>
+								<label>User Password</label>
+								<input class='big' type='password' value='' />
+								<span class='status loading'>&nbsp;</span>
+								<div class='form-actions'> <span class='message ok'>Scout service activated</span>
+									<div class='buttons'>
+										<div class='button disabled'>
+											<input disabled='disabled' type='submit' value='Activate' />
+										</div>
+										<a class='cancel'>Cancel</a> </div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class='form-box' id='copperegg'>
+						<div class='label copperegg'>CopperEgg</div>
+						<a class='action'>Setup</a>
+						<div class='form'>
+							<form action='#' method='post'>
+								<label> API Key <span> (To get a key,&nbsp;<a>sign in to CopperEgg</a>) </span> </label>
+								<input type='text' value='' />
+								<span class='status loading'>&nbsp;</span>
+								<div class='form-actions'> <span class='message ok'>CopperEgg service activated</span>
+									<div class='buttons'>
+										<div class='button disabled'>
+											<input disabled='disabled' type='submit' value='Activate' />
+										</div>
+										<a class='cancel'>Cancel</a> </div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class='content sub-tabbed hidden' id='plugins_alerts'>
+					<h5> Add an Alert </h5>
+					<p>Alerts will notify you when a test fails to match the monitor condition.</p>
+					<div class='form-box' id='campfire'>
+						<div class='label campfire'>Campfire</div>
+						<a class='action'>Setup</a>
+						<div class='form'>
+							<form action='#' method='post'>
+								<label> Subdomain <span> (http://<span class='green'>subdomain</span>.campfire.com) </span> </label>
+								<input type='text' value='' />
+								<span class='status loading'>&nbsp;</span>
+								<label>Room</label>
+								<input type='text' value='' />
+								<span class='status loading'>&nbsp;</span>
+								<label> Token <span> (To get a token,&nbsp;<a>sign in to Campfire</a>) </span> </label>
+								<input type='text' value='' />
+								<span class='status loading'>&nbsp;</span>
+								<div class='form-actions'> <span class='message ok'>Campfire alert activated</span>
+									<div class='buttons'>
+										<div class='button disabled'>
+											<input disabled='disabled' type='submit' value='Activate' />
+										</div>
+										<a class='cancel'>Cancel</a> </div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class='form-box' id='pagerduty'>
+						<div class='label pagerduty'>PagerDuty</div>
+						<a class='action'>Setup</a>
+						<div class='form'>
+							<form action='#' method='post'>
+								<label> <span>Click connect to login to PagerDuty. You will be sent back to this page once a succesful connection has been established.</span> </label>
+								<div class='form-actions'> <span class='message ok'>PagerDuty alert activated</span>
+									<div class='buttons'>
+										<div class='button'>
+											<input type='submit' value='Connect' />
+										</div>
+										<a class='cancel'>Cancel</a> </div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='tabbed hidden' id='invites'>
+				<ul class='sub-tab'>
+					<li class='active'> <a href='#invites_link'>Invite your Friends</a> </li>
+					<li> <a href='#invites_twitter'>Share on Twitter</a> </li>
+					<li> <a href='#invites_facebook'>Share on Facebook</a> </li>
+				</ul>
+				<div class='content sub-tabbed' id='invites_link'>
+					<p><span class='keyword'>Rodrigo</span>, you haven't invited any friends yet. Invite them and get additional credits. </p>
+					<div class='highlight-box'>
+						<p> Use this link with your friends: <a>http://blitz.io/gcp4hbpy1BJN5</a> </p>
+						<a class='email'></a> </div>
+					<p> Once your friend registers, you'll earn&nbsp;<span class='green'>1 extra credit</span>! </p>
+				</div>
+				<div class='content sub-tabbed hidden' id='invites_twitter'>
+					<p><span class='keyword'>Rodrigo</span>, you haven't invited any friends yet. Invite them and get additional credits. </p>
+					<textarea class='share'>@blitz_io makes performance testing a fun sport: http://blitz.io/gcp4hbpy1BJN5 #load #testing</textarea>
+					<div class='letters'>47 characters remaining</div>
+					<div class='buttons share'>
+						<p> Once your friend registers, you'll earn&nbsp;<span class='green'>1 extra credit</span>! </p>
+						<div class='button big right'> <a>Tweet</a> </div>
+					</div>
+				</div>
+				<div class='content sub-tabbed hidden' id='invites_facebook'>
+					<p><span class='keyword'>Rodrigo</span>, you haven't invited any friends yet. Invite them and get additional credits. </p>
+					<textarea class='share'>Blitz makes load and performance testing of your web site, API, iPhone and Android and Facebook apps a fun sport. Instantly launch 1,000,000 users from around the world against your site to see if it can hold up. Integrate blitz into your continuous deployment with our Ruby Gem. Can you take the hit&hellip;</textarea>
+					<div class='buttons share'>
+						<p> Once your friend registers, you'll earn&nbsp;<span class='green'>1 extra credit</span>! </p>
+						<div class='button big right'> <a>Share</a> </div>
+					</div>
+				</div>
+			</div>
+			<div class='tabbed hidden' id='api'>
+				<div class='content'>
+					<p> Want to integrate <span class='keyword'>Blitz</span> into your continuous development? It's as simple as this: </p>
+					<div class='code'>
+						<p> <span class='green'>$</span> gem install <span class='green'>blitz</span> </p>
+						<p> <span class='green'>$</span> blitz <span class='green'>api:init</span> </p>
+						<p> Enter your blitz credentials: </p>
+						<p> User-ID: <span class='green'>rodrigo.graf@spirent.com</span> </p>
+						<p> API-Key: <span class='green'>3e98c53a-cfd4c9f5-14c2ee0d-0d1f1f0e</span> </p>
+					</div>
+					<p> Now use <span class='keyword'>Blitz</span> in a cron job, in your post-commit hooks or anytime you <span class='keyword'>git push</span> your code up to the cloud. </p>
+					<div class='code'>
+						<p> <span class='green'>$ blitz</span> curl -r california -p 1-1000:60 http://your.restful.api/api/v1/foo </p>
+					</div>
+				</div>
+			</div>
+			<div class='tabbed hidden' id='billing'>
+				<ul class='sub-tab'>
+					<li class='active'> <a href='#billing_card'>Credit Card</a> </li>
+					<li> <a href='#billing_invoices'>Invoices</a> </li>
+				</ul>
+				<div class='content sub-tabbed' id='billing_card'>
+					<p><span class='keyword'>Rodrigo</span>, please update your billing information. </p>
+					<div class='button verify'> <a href='#'>Verify</a> </div>
+					<p><span class='keyword'>Rodrigo</span>, you have a valid credit card on file: </p>
+					<div class='highlight-box'>
+						<p> <span class='label'>Card Type:</span> <span class='value'>Visa</span> </p>
+						<p> <span class='label'>Cardholder:</span> <span class='value'>Rodrigo Graf</span> </p>
+						<p> <span class='label'>Card Number:</span> <span class='value'>************4482</span> </p>
+					</div>
+					<div class='buttons update'>
+						<div class='button right'> <a>Delete</a> </div>
+						<div class='button right'> <a>Update</a> </div>
+					</div>
+				</div>
+				<div class='content sub-tabbed hidden' id='billing_invoices'>
+					<table>
+						<tr>
+							<th>Date</th>
+							<th>Item</th>
+							<th class='amount'>Amount</th>
+						</tr>
+						<tr>
+							<td><a class='go' href='#'>November 02, 2012</a> </td>
+							<td>40 Credits</td>
+							<td class='amount'>$40.00</td>
+						</tr>
+						<tr>
+							<td><a class='go' href='#'>October 17, 2012</a> </td>
+							<td>1,000 users / 1 day</td>
+							<td class='amount'>$79.00</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+</div>
+<footer class='play'>
+  <div class='site-logo'> <a href='/'></a> </div>
+  <div class='footer-text'> <a href='http://localhost:5000/privacy'>Privacy</a> <a href='http://localhost:5000/tos'>Terms of Use</a> </div>
+</footer>
+</body>
+</html>
